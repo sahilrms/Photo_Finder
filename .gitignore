@@ -4,9 +4,7 @@ __pycache__/
 *$py.class
 *.so
 .Python
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -48,3 +46,31 @@ Thumbs.db
 *.png
 *.bmp
 screenshot.png  # Add your screenshot later
+
+# Allow specific executable
+!dist/Photo_Finder.exe
+
+# Ignore other executables and build artifacts
+*.exe
+!Photo_Finder.exe
+build/
+dist/*
+!dist/Photo_Finder.exe
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+ENV/
+.venv/
+*.spec
+*.log
+.idea/
+.vscode/
+.DS_Store
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/

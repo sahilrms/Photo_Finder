@@ -7,6 +7,11 @@ if not exist app_icon.ico (
     python create_icon.py
 )
 
+:: Clean up old builds
+if exist dist rmdir /s /q dist
+if exist build rmdir /s /q build
+if exist Photo_Finder.exe del /f /q Photo_Finder.exe
+
 :: Build the executable
 echo Building executable...
 python -m PyInstaller ^
@@ -19,6 +24,14 @@ python -m PyInstaller ^
     --name "Photo_Finder" ^
     photo_finder.py
 
-echo.
-echo Build complete! The executable is in the 'dist' folder.
+:: Copy executable to root
+echo Copying executable to root directory...
+if exist dist\Photo_Finder.exe (
+    copy /y dist\Photo_Finder.exe .
+    echo.
+    echo Build complete! The executable is ready: Photo_Finder.exe
+) else (
+    echo Error: Build failed. Check for errors above.
+)
+
 pause
