@@ -104,6 +104,46 @@ A Python application that helps you find higher quality versions of your photos 
    - Searching through many large images may take time
    - The application processes images in the background to keep the UI responsive
 
+## 🚀 Standalone Executable
+
+You can use the pre-built `photo_finder.exe` file to run the application without installing Python or any dependencies.
+
+### Download and Run
+
+1. **Download the latest release** from the [Releases](https://github.com/sahilrms/Photo_Finder/releases) page
+2. **Extract** the downloaded ZIP file
+3. **Run** `photo_finder.exe` by double-clicking it
+
+### Important Notes
+
+- The first launch might take a few seconds to start
+- Your antivirus might flag the .exe (this is normal for PyInstaller executables)
+- The executable is large (~100MB) because it includes Python and all dependencies
+- Works on Windows 10/11 (64-bit)
+
+### Troubleshooting
+
+If you get an error when running the .exe:
+1. Try right-clicking the file and selecting "Run as administrator"
+2. Make all files are extracted from the ZIP archive
+3. If you see a "DLL not found" error, install the [Visual C++ Redistributable](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
+### Building the Executable Yourself
+
+If you want to build the .exe yourself:
+
+1. Install PyInstaller:
+   ```bash
+   pip install pyinstaller
+   ```
+
+2. Run the build command:
+   ```bash
+   python -m PyInstaller --onefile --windowed --add-data "C:/Python311/Lib/site-packages/cv2;cv2" --hidden-import=opencv_python --hidden-import=PIL photo_finder.py
+   ```
+
+3. Find the executable in the `dist` folder
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
@@ -130,5 +170,5 @@ If you find this project useful, consider giving it a ⭐️ on GitHub!
 ---
 
 <div align="center">
-  Made with ❤️ by Your Name
+  Made with ❤️ by Your Sahil hussain 
 </div>
