@@ -14,48 +14,95 @@ A Python application that helps you find higher quality versions of your photos 
 - **Open in Default Viewer**: One-click access to view full-size images
 - **Progress Tracking**: Real-time progress updates during search operations
 
-## Requirements
+## Getting Started
+
+### Prerequisites
 
 - Python 3.7 or higher
-- OpenCV
-- NumPy
-- Pillow (PIL Fork)
+- pip (Python package installer)
 
-## Installation
+### Installation
 
-1. Clone the repository:
+1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/photo-quality-finder.git
-   cd photo-quality-finder
+   git clone https://github.com/sahilrms/Photo_Finder.git
+   cd Photo_Finder
    ```
 
-2. Install the required packages:
+2. **Create a virtual environment (recommended)**:
+   ```bash
+   # Windows
+   python -m venv venv
+   .\venv\Scripts\activate
+   
+   # macOS/Linux
+   python3 -m venv venv
+   source venv/bin/activate
+   ```
+
+3. **Install the required packages**:
    ```bash
    pip install -r requirements.txt
    ```
+   
+   If you encounter any issues, you can install the packages manually:
+   ```bash
+   pip install opencv-python numpy Pillow
+   ```
 
-## Usage
+## How to Run
 
-1. Run the application:
+1. **Activate your virtual environment** (if you created one):
+   ```bash
+   # Windows
+   .\venv\Scripts\activate
+   
+   # macOS/Linux
+   source venv/bin/activate
+   ```
+
+2. **Run the application**:
    ```bash
    python photo_finder.py
    ```
 
-2. In the application:
-   - Click "Browse..." to select a low-quality photo
-   - Click "Add Directory" to add directories to search in
-   - Click "Find Similar Photos" to start the search
-   - Browse the results and use the "Copy Path" or "Open in Default Viewer" buttons as needed
+## Usage Guide
 
-## How It Works
+1. **Select a Source Image**:
+   - Click the "Browse..." button to select a low-quality photo you want to find a better version of
 
-The application uses Mean Squared Error (MSE) to compare the visual similarity between images. Here's a quick overview of the process:
+2. **Add Search Directories**:
+   - Click "Add Directory" to add folders where the application should search for similar images
+   - You can add multiple directories
+   - Use "Remove Selected" to remove any directory from the search list
 
-1. The source image and all target images are converted to grayscale
-2. All images are resized to a standard size (100x100 pixels) for consistent comparison
-3. The MSE is calculated between the source image and each target image
-4. Results are sorted by similarity (lower MSE = more similar)
-5. The most similar images are displayed with their details
+3. **Start the Search**:
+   - Click "Find Similar Photos" to begin searching
+   - The progress bar will show the search status
+
+4. **View and Use Results**:
+   - The application will display similar images sorted by similarity
+   - For each result, you can:
+     - View the image thumbnail
+     - See the file path and resolution
+     - Click "Copy Path" to copy the file path to clipboard
+     - Click "Open in Default Viewer" to view the full-size image
+
+## Troubleshooting
+
+### Common Issues
+
+1. **Module Not Found Errors**:
+   - Make sure all dependencies are installed: `pip install -r requirements.txt`
+   - If using a virtual environment, ensure it's activated
+
+2. **Image Loading Issues**:
+   - The application supports JPG, JPEG, PNG, and BMP formats
+   - Some corrupted images might not load properly
+
+3. **Performance**:
+   - Searching through many large images may take time
+   - The application processes images in the background to keep the UI responsive
 
 ## Contributing
 
@@ -79,4 +126,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Support
 
 If you find this project useful, consider giving it a ⭐️ on GitHub!
-# Photo_Finder
+
+---
+
+<div align="center">
+  Made with ❤️ by Your Name
+</div>
